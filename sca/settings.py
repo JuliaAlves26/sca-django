@@ -128,3 +128,30 @@ LOGOUT_REDIRECT_URL = 'index'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if DEBUG:
+    # SQLite local
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    # Postgre Heroku
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+
+# Postgre local (criar banco e usuário previamente)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'sca',
+            'USER': 'marco',
+            'PASSWORD': 'marcoaparaujo',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
