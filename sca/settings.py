@@ -26,7 +26,7 @@ SECRET_KEY = ')-qfxt^-(y9r%42^52b8ppx(8l73coa-y5njbztiogh^6pkp76'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['sca-mapa.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
