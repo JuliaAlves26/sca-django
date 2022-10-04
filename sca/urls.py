@@ -19,7 +19,11 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
 
+from aplic.views import IndexView, SobreView
+
 urlpatterns = [
     path('restrito/', admin.site.urls),
     path('', include('aplic.urls')),
 ]
+
+

@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')-qfxt^-(y9r%42^52b8ppx(8l73coa-y5njbztiogh^6pkp76'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sca-mapa.herokuapp.com', '127.0.0.1']
 
@@ -129,29 +129,4 @@ LOGOUT_REDIRECT_URL = 'index'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if DEBUG:
-    # SQLite local
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-else:
-    # Postgre Heroku
-    DATABASES = {
-        'default': dj_database_url.config()
-    }
-
-# Postgre local (criar banco e usuário previamente)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'sca',
-            'USER': 'marco',
-            'PASSWORD': 'marcoaparaujo',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
 
